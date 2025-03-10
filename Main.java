@@ -5,14 +5,27 @@ public class Main {
         Perusahaan perusahaan = new Perusahaan("PT. Inovasi Teknologi");
 
         try {
-            Karyawan karyawan1 = new Karyawan("Budi", 5000000, perusahaan);
-            Karyawan karyawan2 = new Karyawan("Anakin", 6500000, perusahaan);
-            Karyawan karyawan3 = new Karyawan("Rudi", 5500000, perusahaan);
+            // Membuat objek karyawan reguler
+            Karyawan karyawan = new Karyawan("Budi", 5000000, perusahaan);
+            
+            // Membuat objek programmer
+            Programmer programmer = new Programmer("Anakin", 6500000, perusahaan, 2000000);
+            
+            // Membuat objek manager
+            Manager manager = new Manager("Reyhan", 8000000, perusahaan, 3500000, "IT");
 
-            System.out.println("Informasi Karyawan:");
-            karyawan1.info();
-            karyawan2.info();
-            karyawan3.info();
+            // Menampilkan informasi lengkap karyawan
+            System.out.println("INFORMASI LENGKAP KARYAWAN:");
+            karyawan.info();
+            programmer.info();
+            manager.info();
+            
+            // Menampilkan informasi gaji karyawan
+            System.out.println("INFORMASI GAJI KARYAWAN:");
+            karyawan.infoGaji();
+            programmer.infoGaji();
+            manager.infoGaji();
+            
         } catch (IllegalArgumentException e) {
             System.out.println("Error: " + e.getMessage());
         }
