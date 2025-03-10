@@ -1,7 +1,13 @@
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class Karyawan {
     private String nama;
     private int gajiPokok;
     private Perusahaan perusahaan;
+    
+    // NumberFormat untuk memformat angka mata uang
+    protected static final NumberFormat currencyFormatter = NumberFormat.getNumberInstance(new Locale("id", "ID"));
 
     public Karyawan(String nama, int gajiPokok, Perusahaan perusahaan) {
         setNama(nama);
@@ -20,13 +26,26 @@ public class Karyawan {
         return nama;
     }
 
-    public double getGajiPokok() {
+    public int getGajiPokok() {
         return gajiPokok;
+    }
+    
+    public Perusahaan getPerusahaan() {
+        return perusahaan;
+    }
+
+    public double hitungGaji() {
+        return gajiPokok;
+    }
+    
+    public void infoGaji() {
+        System.out.println("Nama Karyawan: " + nama);
+        System.out.println("Total Gaji: Rp " + currencyFormatter.format(hitungGaji()));
     }
 
     public void info() {
         System.out.println("Nama Karyawan: " + nama);
-        System.out.println("Gaji Pokok: Rp " + gajiPokok);
+        System.out.println("Gaji Pokok: Rp " + currencyFormatter.format(gajiPokok));
         System.out.println("Perusahaan: " + perusahaan.getNamaPerusahaan());
         System.out.println();
     }
