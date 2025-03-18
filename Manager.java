@@ -33,8 +33,8 @@ public class Manager extends Karyawan {
     public void info() {
         System.out.println("Nama Manager: " + getNama());
         System.out.println("Divisi: " + divisi);
-        System.out.println("Gaji Pokok: Rp " + currencyFormatter.format(getGajiPokok()));
-        System.out.println("Insentif: Rp " + currencyFormatter.format(insentif));
+        System.out.println("Gaji Pokok: " + Util.formatRupiah(getGajiPokok()));
+        System.out.println("Insentif: " + Util.formatRupiah(insentif));
         System.out.println("Perusahaan: " + getPerusahaan().getNamaPerusahaan());
         System.out.println();
     }
