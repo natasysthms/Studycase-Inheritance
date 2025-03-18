@@ -14,16 +14,16 @@ public class Programmer extends Karyawan {
         this.bonus = bonus;
     }
     
-    
+    @Override
     public double hitungGaji() {
         return getGajiPokok() + bonus;
     }
     
-    
+    @Override
     public void info() {
         System.out.println("Nama Programmer: " + getNama());
-        System.out.println("Gaji Pokok: Rp " + currencyFormatter.format(getGajiPokok()));
-        System.out.println("Bonus: Rp " + currencyFormatter.format(bonus));
+        System.out.println("Gaji Pokok: " + Util.formatRupiah(getGajiPokok()));
+        System.out.println("Bonus: " + Util.formatRupiah(bonus));
         System.out.println("Perusahaan: " + getPerusahaan().getNamaPerusahaan());
         System.out.println();
     }
